@@ -1,38 +1,61 @@
-# Getting Started with book-library
+# Getting Started with **Book Library**
 
-The purpose of this application is to present the most common use-cases of using the React Router.
+This application demonstrates common use cases of **React Router**, including:
 
-These cases include:
+- Setting **dynamic parameters** in a URL and handling them accordingly.
+- Using a **Private Route** to render components based on user authentication.
+- Handling **404 Not Found** errors for unknown URLs.
 
-- setting dynamic parameters in a url and handle them accordingly.
-- using a Private Route to render Components, accourding to the user's identity.
-- setting a 404 Not Found for urls that are out of our application's responsibility.
+The application fetches book data from `/public/books.json`, a static file containing **ID, title, author, and description** for each book.
 
-Our context is fetched from the /public/books.json, a file containing data about the id, the title, the author and the description of som books.
+---
 
-<U>Available Routes.</u>
+## 📌 Available Routes
 
-- On http://localhost:3000/ the <Books> component renders, containg each book's title and author that fetched from the books.json.\
-  If the url contains a URLSearchParams(for example: http://localhost:3000?search=ApPle) we check if the query parameter is "search", and then present the titles that are relevant to the search specified search parameter. We filter out each book's matching title with the search parameter in a case-insensitive way.(In our example titles with the word apple will be shown).
-  Note: URLSearchParams works only when requesting the http://localhost:3000/.
+### **1. Home (`/`)**
 
-- The http://localhost:3000/books redirects the user to the http://localhost:3000/,
+- The `<Books>` component renders, displaying each book's **title and author** fetched from `books.json`.
+- If the URL contains a **search query** (e.g., `/search?query=apple`), the app filters books by title **case-insensitively**.
+  - Example: `/search?query=apple` will display all book titles containing "apple".
+- **Note:** The search feature only works when accessing `/`.
 
-- The http://localhost:3000/books/x will show data depending the existense of a book with id x. These data include title, author and the book's description.
+### **2. Books (`/books`)**
 
-- The http://localhost:3000/secret if the isAuthenticated of the component PrivateRoute is set to true will render the <SecretBooks> component with the books that an authorized user should view, otherwise redirects the user to the http://localhost:3000. The purpose of this assignment is to understand the case, thats why we dont use a backend example, but a simple mock variable.
+- Redirects the user to `/`.
 
-- Every other route that is not described above, will render the <NotFound> Component.
+### **3. Book Details (`/books/:id`)**
 
-## Available Scripts
+- Displays details of a specific book, including **title, author, and description**, based on the given `id`.
 
-In the project directory, you can run:
+### **4. Private Route (`/secret`)**
 
-### `npm install`
+- If `isAuthenticated` is **true**, the `<SecretBooks>` component renders, displaying books accessible only to authorized users.
+- If `isAuthenticated` is **false**, the user is redirected to `/`.
+- **Note:** Authentication is a mock example and does not use a backend.
 
-Installs the dependencies to run this project.
+### **5. 404 Not Found (`*`)**
 
-### `npm start`
+- Any other undefined route will render the `<NotFound>` component.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
+
+## 🔧 Available Scripts
+
+Run the following commands in the project directory:
+
+### **Install dependencies**
+
+```sh
+npm install
+```
+
+### **Start the development server**
+
+```sh
+npm start
+```
+
+Runs the app in development mode.  
+Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
+
+---
