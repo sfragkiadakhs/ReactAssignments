@@ -1,25 +1,49 @@
-# Getting Started with bug-bluster
+# 🚀 Getting Started with **Bug Bluster**
 
-The purpose of this application is to understand the use of Reducers in React.
+This application is designed to help understand the use of **Reducers in React** through a simple **ticketing system**.
 
-The application use-case is a ticketing-system.\
-From top-to-bottom the following UI elements can be viewed:
+## 🎯 Application Overview
 
-- A form with fields title, description and priority, that allows the user to create or edit tickets.
-- A list with the tickets that have been created so far, sorted by default from high-to-low priority(our available priorities are: low, medium or high).
+The UI consists of the following elements:
 
-Because our tickets have different states we use a ticket Reducer to manage these states.
-Our states with their available actions incude:
+- A **form** with fields for **title, description, and priority**, allowing users to create or edit tickets.
+- A **list of created tickets**, sorted **by default from high to low priority**.
+  - Available priority levels: **low, medium, high**.
 
-- a state for our tickets with action.type {"ADD_TICKET","UPDATE_TICKET" and "DELETE_TICKET"},
-- a state that corresponds to the existence of a current editing ticket with action.type{"SET_EDITING_TICKET" and "CLEAR_EDITING_TICKET"}
-- and a state that stores how we want to sort our tickets when using action.type = "SET_SORTING".
+Since tickets have different states, we use a **ticket reducer** to manage them efficiently.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔧 State Management with Reducers
 
-### `npm start`
+The application includes the following **states and actions**:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Tickets State**
+
+   - Actions: `ADD_TICKET`, `UPDATE_TICKET`, `DELETE_TICKET`
+
+2. **Editing Ticket State**
+
+   - Tracks whether a ticket is being edited.
+   - Actions: `SET_EDITING_TICKET`, `CLEAR_EDITING_TICKET`
+
+3. **Sorting State**
+   - Stores the selected sorting method for tickets.
+   - Action: `SET_SORTING`
+
+---
+
+## 🛠 Available Scripts
+
+Run the following command in the project directory:
+
+### **Start the development server**
+
+```sh
+npm start
+```
+
+Runs the app in development mode.  
+Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
+
+---
